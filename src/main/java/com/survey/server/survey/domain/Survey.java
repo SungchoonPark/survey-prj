@@ -28,5 +28,13 @@ public class Survey {
     @Enumerated(EnumType.STRING)
     private Rating rating;
 
+    private Survey(Member member, Image image, Rating rating) {
+        this.member = member;
+        this.image = image;
+        this.rating = rating;
+    }
 
+    public static Survey of(Member member, Image image, Rating rating) {
+        return new Survey(member, image, rating);
+    }
 }

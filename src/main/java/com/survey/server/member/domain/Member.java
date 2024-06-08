@@ -23,6 +23,15 @@ public class Member {
 
     private String pwd;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    private Boolean surveyComplete;
+
     @OneToMany(cascade = CascadeType.ALL)
     private List<Survey> surveyList = new ArrayList<>();
+
+    public void surveyComplete() {
+        this.surveyComplete = true;
+    }
 }
