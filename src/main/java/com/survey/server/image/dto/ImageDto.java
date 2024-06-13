@@ -6,6 +6,7 @@ import lombok.Builder;
 public record ImageDto(
         Long imageId,
         String imageName,
-        String imageUrl
+        String imageUrl,
+        String category
 ) {
 }

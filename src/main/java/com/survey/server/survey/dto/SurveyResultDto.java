@@ -7,6 +7,7 @@ import lombok.Builder;
 public record SurveyResultDto(
     String memberName,
     String imageName,
+    String category,
     Rating rating
 ) {
 }

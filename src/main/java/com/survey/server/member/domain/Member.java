@@ -32,6 +32,6 @@ public class Member {
     private List<Survey> surveyList = new ArrayList<>();
 
     public void surveyComplete() {
-        this.surveyComplete = true;
+        this.surveyComplete = Boolean.TRUE;
     }
 }

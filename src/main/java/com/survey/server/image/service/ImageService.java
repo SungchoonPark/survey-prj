@@ -39,6 +39,7 @@ public class ImageService {
                     .imageId(image.getId())
                     .imageName(image.getImageName())
                     .imageUrl(image.getImageUrl())
+                    .category(image.getCategory())
                     .build();
 
             imageTmps.add(tmpImage);

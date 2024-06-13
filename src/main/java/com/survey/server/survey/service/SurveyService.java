@@ -57,6 +57,7 @@ public class SurveyService {
                     SurveyResultDto.builder()
                             .memberName(member.getUsername())
                             .imageName(survey.getImage().getImageName())
+                            .category(survey.getImage().getCategory())
                             .rating(survey.getRating())
                             .build()
             );

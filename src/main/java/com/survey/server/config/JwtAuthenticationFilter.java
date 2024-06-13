@@ -22,9 +22,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final JwtUtil jwtUtil;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-//        String token = jwtUtil.resolveToken(request.getHeader("Authorization"));
-        // 쿠키에서 가져오는 값에 대한 코드를 짜기
-
+        log.info("[요청 URL] : {}" , request.getRequestURI());
         final Cookie[] cookies = request.getCookies();
         String token = null;
         String username = null;
@@ -64,7 +62,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
         String path = request.getRequestURI();
-        String[] excludePath = {"/api/login", "/exception"};
+        String[] excludePath = {"/api/login", "/exception", "/api/check"};
         return Arrays.stream(excludePath).anyMatch(path::startsWith);
     }
 }
