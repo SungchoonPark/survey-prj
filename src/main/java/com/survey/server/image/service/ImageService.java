@@ -30,8 +30,7 @@ public class ImageService {
             throw new CustomException(CustomResponseStatus.SURVEY_COMPLETE);
         }
 
-        log.info("username : {}", username);
-        List<Image> images = imageRepository.findAllByUsername(username);
+        List<Image> images = imageRepository.findAll();
         List<ImageDto> imageTmps = new ArrayList<>();
 
         for (Image image : images) {
